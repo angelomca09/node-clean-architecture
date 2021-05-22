@@ -5,7 +5,7 @@ module.exports = class RepoUsuarioEmMemoria extends RepoUsuario {
     constructor() {
         super();
         this.users = [];
-        this.currentId = 1;
+        this.currentId = 0;
     }
 
     async add(InstanciaUsuario) {

@@ -5,7 +5,7 @@ module.exports = class RepoLivroEmMemoria extends RepoLivro {
     constructor() {
         super();
         this.livros = [];
-        this.currentId = 1;
+        this.currentId = 0;
     }
 
     async add(InstanciaLivro) {
