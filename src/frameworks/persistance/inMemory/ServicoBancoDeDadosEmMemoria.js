@@ -18,12 +18,12 @@ module.exports = class ServicoBancoDeDadosEmMemoria extends (
   }
 
   async seedData() {
-    let amostraUsuario = new Usuario("angelomca", "123", 1, 20);
+    await this.userRepository.add(new Usuario("angelomca", "123", 1, 20));
+    await this.userRepository.add(new Usuario("gui_kzu", "456", 3, 666));
+    await this.userRepository.add(new Usuario("fepa", "789", 2, 100));
 
-    amostraUsuario = await this.userRepository.add(amostraUsuario);
-
-    let amostraLivro = new Livro("Harry Potter", 30, false, false);
-
-    amostraLivro = await this.livroRepository.add(amostraLivro);
+    await this.livroRepository.add(new Livro("Capitães da Areia", 60, true, false));
+    await this.livroRepository.add(new Livro("A Vaca Voadora", 30, false, true));
+    await this.livroRepository.add(new Livro("O Alienista", 15, false, false));
   }
 };
