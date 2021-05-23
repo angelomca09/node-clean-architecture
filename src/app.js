@@ -9,11 +9,14 @@ const port = process.env.PORT || 3000;
 
 DependenciasProjeto.ServicoBancoDeDados.initDatabase().then(
   () => {
+    //Configuração para acessar corpo das requisições
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
+    //API
     app.use("/api", routes(DependenciasProjeto));
 
+    //Configuração de Erros
     //app.use(ErrorHandler);
 
     app.listen(port, () => console.log(`http://localhost:${port}`));
