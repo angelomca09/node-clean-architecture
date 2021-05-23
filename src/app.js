@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const routes = require("./frameworks/web/routes");
 const DependenciasProjeto = require("./config/DependenciasProjeto");
-//const ErrorHandler = require("./frameworks/common/ErrorHandler");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,9 +14,6 @@ DependenciasProjeto.ServicoBancoDeDados.initDatabase().then(
 
     //API
     app.use("/api", routes(DependenciasProjeto));
-
-    //Configuração de Erros
-    //app.use(ErrorHandler);
 
     app.listen(port, () => console.log(`http://localhost:${port}`));
   },
