@@ -19,11 +19,13 @@ module.exports = class ServicoBancoDeDadosEmMemoria extends (
 
   async seedData() {
     await this.userRepository.add(new Usuario("angelomca", "123", 1, 20));
-    await this.userRepository.add(new Usuario("gui_kzu", "456", 3, 666));
+    await this.userRepository.add(new Usuario("g_kzu", "456", 3, 250));
     await this.userRepository.add(new Usuario("fepa", "789", 2, 100));
 
-    await this.livroRepository.add(new Livro("Capitães da Areia", 60, true, false));
-    await this.livroRepository.add(new Livro("A Vaca Voadora", 30, false, true));
-    await this.livroRepository.add(new Livro("O Alienista", 15, false, false));
+    await this.livroRepository.add(new Livro("Capitães da Areia", 30, true, false));
+    await this.livroRepository.add(new Livro("A Vaca Voadora", 10, false, false));
+    await this.livroRepository.add(new Livro("O Alienista", 15, false, true));
+    await this.livroRepository.add(new Livro("Harry Potter: A Pedra Filosofal", 35, true, true));
+    await this.livroRepository.add(new Livro("The Witcher: O Ultimo Desejo", 35, true, true));
   }
 };
